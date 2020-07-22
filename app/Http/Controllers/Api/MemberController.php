@@ -33,4 +33,9 @@ class MemberController extends Controller
     {
         return $this->memberAddUsecase->handle($request);
     }
+    
+    public function test()
+    {
+        return ['aaa'=>1, 'bbb'=>2];
+    }
 }

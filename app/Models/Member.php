@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Laravel\Passport\HasApiTokens;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Member extends Model
+class Member extends Authenticatable
 {
+    use HasApiTokens;
+
     /**
      * 複数代入する属性
      *
@@ -40,5 +43,10 @@ class Member extends Model
     public function insert(array $params): Member
     {
         return $this->create($params);
+    }
+
+    public function validateForPassportPasswordGrant($password)
+    {
+        return password_verify($password, $this->password);
     }
 }
