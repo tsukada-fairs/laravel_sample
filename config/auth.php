@@ -41,10 +41,14 @@ return [
             'provider' => 'members',
         ],
 
-        'api' => [
+        'api-member' => [
             'driver' => 'passport',
-            'provider' => 'members',
-            'hash' => false,
+            'provider' => 'members'
+        ],
+
+        'api-staff' => [
+            'driver' => 'passport',
+            'provider' => 'staffs'
         ],
     ],
 
@@ -73,6 +77,10 @@ return [
         'members' => [
             'driver' => 'eloquent',
             'model' => App\Models\Member::class,
+        ],
+        'staffs' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Staff::class,
         ],
 
         // 'users' => [

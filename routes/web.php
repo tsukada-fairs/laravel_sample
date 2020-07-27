@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/member/add', 'MemberController@index');
+Route::get('/hoge', 'HogeController@index');

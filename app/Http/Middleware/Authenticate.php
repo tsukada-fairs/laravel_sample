@@ -34,7 +34,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if(in_array('api', $this->guards, true)) {
+        if(in_array('api-member', $this->guards, true) || in_array('api-staff', $this->guards, true)) {
             return;
         }
         else {
